@@ -7,7 +7,7 @@
   "layer": [
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/abhimalik-uni/homework9/main/js/oceans.topojson",
+        "url": "/Users/dhivyansureshkumar/Desktop/FIT3149 Assignment2/Oceans.topojson",
         "format": {"type": "topojson", "feature": "oceans"}
       },
       "mark": {"type": "geoshape", "fill": "skyblue"}
