@@ -1,4 +1,4 @@
- {
+{
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": "Healthcare Metrics by Country in 2023",
     "width": 400,
@@ -9,6 +9,7 @@
     "transform": [
         {"filter": "datum['Physicians per thousand'] != null && datum['Out of pocket health expenditure'] != null"},
         {"filter": "indexof(['Australia', 'United States', 'Canada', 'United Kingdom', 'Germany', 'China', 'India', 'Brazil', 'South Africa', 'Russia'], datum.Country) >= 0"},
+        {"filter": {"selection": "CountrySelect"}},
         {
             "fold": ["Physicians per thousand", "Out of pocket health expenditure"],
             "as": ["variable", "value"]
@@ -32,7 +33,10 @@
                 "type": "quantitative",
                 "axis": {
                     "title": "Value",
-                    "format": {"signal": "datum.variable === 'Out of pocket health expenditure' ? '.0%' : ' '"}
+                    "format": {"signal": "datum.variable === 'Out of pocket health expenditure' ? '.0%' : ' '"},
+                    "scale": {
+                        "domain": {"signal": "datum.variable === 'Out of pocket health expenditure' ? [0, 100] : null"}
+                    }
                 }
             },
             "color": {
@@ -61,6 +65,23 @@
                 "binSpacing": 10,
                 "continuousBandSize": 5
             }
+        },
+        "selection": {
+            "CountrySelect": {
+                "type": "multi",
+                "fields": ["Country"],
+                "bind": {
+                    "input": "checkbox",
+                    "options": ["Australia", "United States", "Canada", "United Kingdom", "Germany", "China", "India", "Brazil", "South Africa", "Russia"],
+                    "name": "Select Countries"
+                },
+                "init": [{"Country": "Australia"}]
+            }
+        }
+    },
+    "resolve": {
+        "scale": {
+            "y": "independent"
         }
     }
 }
