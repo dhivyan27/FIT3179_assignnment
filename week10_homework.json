@@ -1,63 +1,67 @@
-# Vega-Lite specification for the multi-bar chart
-
-vega_lite_spec = {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Healthcare Metrics by Country in 2023",
-  "width": 800,
-  "height": 450,
-  "data": {
-    "url": "world-data-2023 2.csv"
-  },
-  "transform": [
-    {"filter": "datum['Physicians per thousand'] != null && datum['Out of pocket health expenditure'] != null"}
-  ],
-  "mark": "bar",
-  "encoding": {
-    "x": {
-      "field": "Country",
-      "type": "ordinal",
-      "axis": {"title": "Country", "labelAngle": -45}
+ {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Healthcare Metrics by Country in 2023",
+    "width": 400,
+    "height": 450,
+    "data": {
+        "url": "world-data-2023 2.csv"
     },
-    "y": {
-      "field": "value",
-      "type": "quantitative",
-      "axis": {"title": "Value"}
+    "transform": [
+        {"filter": "datum['Physicians per thousand'] != null && datum['Out of pocket health expenditure'] != null"},
+        {"filter": "indexof(['Australia', 'United States', 'Canada', 'United Kingdom', 'Germany', 'China', 'India', 'Brazil', 'South Africa', 'Russia'], datum.Country) >= 0"},
+        {
+            "fold": ["Physicians per thousand", "Out of pocket health expenditure"],
+            "as": ["variable", "value"]
+        }
+    ],
+    "facet": {
+        "field": "variable",
+        "type": "nominal",
+        "columns": 2
     },
-    "color": {
-      "field": "variable",
-      "type": "nominal",
-      "scale": {
-        "domain": ["Physicians per thousand", "Out of pocket health expenditure"],
-        "range": ["#1f77b4", "#ff7f0e"]
-      },
-      "legend": {
-        "title": "Metric"
-      }
-    },
-    "tooltip": [
-      {"field": "Country", "type": "nominal"},
-      {"field": "value", "type": "quantitative", "title": "Value"}
-    ]
-  },
-  "transform": [
-    {
-      "fold": ["Physicians per thousand", "Out of pocket health expenditure"],
-      "as": ["variable", "value"]
+    "spec": {
+        "mark": "bar",
+        "encoding": {
+            "x": {
+                "field": "Country",
+                "type": "ordinal",
+                "axis": {"title": "Country", "labelAngle": -45}
+            },
+            "y": {
+                "field": "value",
+                "type": "quantitative",
+                "axis": {
+                    "title": "Value",
+                    "format": {"signal": "datum.variable === 'Out of pocket health expenditure' ? '.0%' : ' '"}
+                }
+            },
+            "color": {
+                "field": "variable",
+                "type": "nominal",
+                "scale": {
+                    "domain": ["Physicians per thousand", "Out of pocket health expenditure"],
+                    "range": ["#1f77b4", "#ff7f0e"]
+                },
+                "legend": {
+                    "title": "Metric"
+                }
+            },
+            "tooltip": [
+                {"field": "Country", "type": "nominal"},
+                {
+                    "field": "value",
+                    "type": "quantitative",
+                    "title": "Value",
+                    "format": {"signal": "datum.variable === 'Out of pocket health expenditure' ? '.0%' : ' '"}
+                }
+            ]
+        },
+        "config": {
+            "bar": {
+                "binSpacing": 10,
+                "continuousBandSize": 5
+            }
+        }
     }
-  ],
-  "selection": {
-    "MetricFilter": {
-      "type": "multi",
-      "fields": ["variable"],
-      "bind": "legend"
-    }
-  },
-  "config": {
-    "bar": {
-      "binSpacing": 10,
-      "continuousBandSize": 5
-    }
-  }
 }
 
-vega_lite_spec
