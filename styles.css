@@ -19,8 +19,8 @@ h1 {
 
 .viz-wrapper {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;  /* Stack visualizations vertically */
+    align-items: center;     /* Align items to the center */
     margin: 0 auto;
     background-color: white;
     padding: 20px;
@@ -29,17 +29,10 @@ h1 {
 }
 
 #choropleth_map, #homework10 {
-    flex-basis: 48%; /* Each visualization takes almost half of the container */
+    width: 100%; /* Take full width of the parent container */
+    margin: 10px 0;  /* Add vertical spacing between visualizations */
     height: auto;
     border: 1px solid #e0e0e0;
     border-radius: 5px;
     padding: 20px;
-}
-
-#choropleth_map {
-    position: relative;
-    top: 100px;
-    bottom: 100px;
-    left: 100px;
-    right: 100px;
 }
