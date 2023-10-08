@@ -1,88 +1,90 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Healthcare Metrics by Country in 2023",
-    "width": 400,
+    "title": "Gross Tertiary Education Enrollment vs. GDP in 2023",
+    "width": 600,
     "height": 450,
     "data": {
         "url": "world-data-2023 2.csv"
     },
-    "transform": [
-        {"filter": "datum['Physicians per thousand'] != null && datum['Out of pocket health expenditure'] != null"},
-        {"filter": "indexof(['Australia', 'United States', 'Canada', 'United Kingdom', 'Germany', 'China', 'India', 'Brazil', 'South Africa', 'Russia'], datum.Country) >= 0"},
-        {"filter": {"selection": "CountrySelect"}},
+    "params": [
         {
-            "fold": ["Physicians per thousand", "Out of pocket health expenditure"],
-            "as": ["variable", "value"]
+            "name": "LanguageSelect",
+            "value": "All",
+            "bind": {
+                "input": "select",
+                "options": ["All", "English", "Spanish", "Chinese", "Hindi", "Arabic", "Other"],
+                "name": "Select Language"
+            }
         }
     ],
-    "facet": {
-        "field": "variable",
-        "type": "nominal",
-        "columns": 2
-    },
-    "spec": {
-        "mark": "bar",
-        "encoding": {
-            "x": {
-                "field": "Country",
-                "type": "ordinal",
-                "axis": {"title": "Country", "labelAngle": -45}
-            },
-            "y": {
-                "field": "value",
-                "type": "quantitative",
-                "axis": {
-                    "title": "Value",
-                    "format": {"signal": "datum.variable === 'Out of pocket health expenditure' ? '.0%' : ' '"},
-                    "scale": {
-                        "domain": {"signal": "datum.variable === 'Out of pocket health expenditure' ? [0, 100] : null"}
-                    }
-                }
-            },
-            "color": {
-                "field": "variable",
-                "type": "nominal",
-                "scale": {
-                    "domain": ["Physicians per thousand", "Out of pocket health expenditure"],
-                    "range": ["#1f77b4", "#ff7f0e"]
-                },
-                "legend": {
-                    "title": "Metric"
-                }
-            },
-            "tooltip": [
-                {"field": "Country", "type": "nominal"},
-                {
-                    "field": "value",
+    "transform": [
+        {"filter": "datum['Gross tertiary education enrollment (%)'] != null && datum['GDP'] != null"},
+        {"filter": "LanguageSelect == 'All' || indexof(datum['Official language'], LanguageSelect) >= 0"},
+        {
+            "calculate": "if(datum.GDP >= 1e9, round(datum.GDP / 1e9) + 'B', round(datum.GDP / 1e6) + 'M')",
+            "as": "GDPTip"
+        },
+        {
+            "calculate": "if(datum.Population >= 1e9, round(datum.Population / 1e9) + 'B', round(datum.Population / 1e6) + 'M')",
+            "as": "PopulationTip"
+        }
+    ],
+    "layer": [
+        {
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "GDP",
                     "type": "quantitative",
-                    "title": "Value",
-                    "format": {"signal": "datum.variable === 'Out of pocket health expenditure' ? '.0%' : ' '"}
-                }
-            ]
-        },
-        "config": {
-            "bar": {
-                "binSpacing": 10,
-                "continuousBandSize": 5
-            }
-        },
-        "selection": {
-            "CountrySelect": {
-                "type": "multi",
-                "fields": ["Country"],
-                "bind": {
-                    "input": "checkbox",
-                    "options": ["Australia", "United States", "Canada", "United Kingdom", "Germany", "China", "India", "Brazil", "South Africa", "Russia"],
-                    "name": "Select Countries"
+                    "title": "GDP (Log Scale)",
+                    "scale": {"type": "log"}
                 },
-                "init": [{"Country": "Australia"}]
+                "y": {
+                    "field": "Gross tertiary education enrollment (%)",
+                    "type": "quantitative",
+                    "title": "Gross Tertiary Education Enrollment (%)"
+                },
+                "color": {
+                    "field": "Country",
+                    "type": "nominal",
+                    "legend": null
+                },
+                "size": {
+                    "field": "Population",
+                    "type": "quantitative",
+                    "legend": {"title": "Population", "format": ".1s"}
+                },
+                "tooltip": [
+                    {"field": "Country", "type": "nominal"},
+                    {"field": "Gross tertiary education enrollment (%)", "type": "quantitative", "title": "Gross Tertiary Education Enrollment (%)"},
+                    {"field": "GDPTip", "type": "nominal", "title": "GDP"},
+                    {"field": "PopulationTip", "type": "nominal", "title": "Population"}
+                ]
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "align": "left",
+                "baseline": "middle",
+                "dx": 10
+            },
+            "transform": [
+                {
+                    "filter": "indexof(['Australia', 'Italy', 'China', 'New Zealand', 'Singapore', 'Canada'], datum.Country) >= 0"
+                }
+            ],
+            "encoding": {
+                "x": {
+                    "field": "GDP",
+                    "type": "quantitative"
+                },
+                "y": {
+                    "field": "Gross tertiary education enrollment (%)",
+                    "type": "quantitative"
+                },
+                "text": {"field": "Country", "type": "nominal"}
             }
         }
-    },
-    "resolve": {
-        "scale": {
-            "y": "independent"
-        }
-    }
+    ]
 }
-
