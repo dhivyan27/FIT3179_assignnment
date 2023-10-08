@@ -5,21 +5,23 @@
   <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
-  
-  
-
   <link rel="stylesheet" type="text/css" href="styles.css" media="all">
   
 </head>
 <body>
   
-<div id="homework"></div>
+<div id="homework9"></div>
+<div id="homework10"></div>
 
 <script type="text/javascript">
+  var spec1 = "week9_homework.json";
+  vegaEmbed('#homework9', spec1).then(function(result) {
+    // Access the Vega view instance for the first visualization
+  }).catch(console.error);
 
-  var spec2 = "week9_homework.json";
-  vegaEmbed('#homework', spec2).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  var spec2 = "week10_homework.json";
+  vegaEmbed('#homework10', spec2).then(function(result) {
+    // Access the Vega view instance for the second visualization
   }).catch(console.error);
 </script>
 
