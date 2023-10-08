@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
-  <link rel="stylesheet" type="text/css" href="styles.css" media="all">
-  
+    <title>Global Insights: A Comparative Analysis of Countries in 2023</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css" media="all">
 </head>
 <body>
-  
-<div id="homework9"></div>
-<div id="homework10"></div>
+    <div class="container">
+        <h1>Global Insights: A Comparative Analysis of Countries in 2023</h1>
+        <div class="viz-wrapper">
+            <div id="homework9"></div>
+            <div id="homework10"></div>
+        </div>
+    </div>
 
-<script type="text/javascript">
-  var spec1 = "week9_homework.json";
-  vegaEmbed('#homework9', spec1).then(function(result) {
-    // Access the Vega view instance for the first visualization
-  }).catch(console.error);
+    <script type="text/javascript">
+        var spec1 = "week9_homework.json";
+        vegaEmbed('#homework9', spec1).then(function(result) {
+            // Access the Vega view instance for the first visualization
+        }).catch(console.error);
 
-  var spec2 = "week10_homework.json";
-  vegaEmbed('#homework10', spec2).then(function(result) {
-    // Access the Vega view instance for the second visualization
-  }).catch(console.error);
-</script>
-
+        var spec2 = "week10_homework.json";
+        vegaEmbed('#homework10', spec2).then(function(result) {
+            // Access the Vega view instance for the second visualization
+        }).catch(console.error);
+    </script>
 </body>
 </html>

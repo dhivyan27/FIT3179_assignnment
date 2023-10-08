@@ -5,12 +5,23 @@ body {
     padding: 20px;
 }
 
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
 .viz-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-    max-width: 1200px;
     background-color: white;
     padding: 20px;
     border-radius: 10px;
@@ -18,7 +29,7 @@ body {
 }
 
 #choropleth_map, #homework10 {
-    flex-basis: 48%; /* This will make sure each visualization takes almost half of the container, with a tiny gap in between */
+    flex-basis: 48%; /* Each visualization takes almost half of the container */
     height: auto;
     border: 1px solid #e0e0e0;
     border-radius: 5px;
