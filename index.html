@@ -13,6 +13,16 @@
     <div class="container">
         <h1>Global Insights: A Comparative Analysis of Countries in 2023</h1>
         
+        <!-- Homework 9 Visualization -->
+        <div class="viz-wrapper">
+            <div id="homework9"></div>
+        </div>
+
+        <!-- Homework 10 Visualization -->
+        <div class="viz-wrapper">
+            <div id="homework10"></div>
+        </div>
+
         <!-- Distribution of Unemployment Rates by Country in 2023 -->
         <div class="viz-wrapper">
             <div id="unemploymentrate"></div>
@@ -36,6 +46,14 @@
 
     <script type="text/javascript">
         // Embedding Vega-Lite visualizations
+        vegaEmbed('#homework9', 'week9_homework.json').then(function(result) {
+            // Access the Vega view instance for Homework 9
+        }).catch(console.error);
+
+        vegaEmbed('#homework10', 'week10_homework.json').then(function(result) {
+            // Access the Vega view instance for Homework 10
+        }).catch(console.error);
+
         vegaEmbed('#unemploymentrate', 'unemploymentrate.json').then(function(result) {
             // Access the Vega view instance for the unemployment rate
         }).catch(console.error);
