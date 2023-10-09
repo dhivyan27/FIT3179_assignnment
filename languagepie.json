@@ -1,0 +1,42 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Distribution of Countries by Predominant Official Language in 2023",
+    "width": 600,
+    "height": 450,
+    "data": {
+        "url": "world-data-2023 2.csv"
+    },
+    "transform": [
+        {
+            "aggregate": [
+                {
+                    "op": "count",
+                    "as": "Country_Count"
+                }
+            ],
+            "groupby": ["Official language"]
+        }
+    ],
+    "mark": "arc",
+    "encoding": {
+        "theta": {
+            "field": "Country_Count",
+            "type": "quantitative",
+            "stack": true
+        },
+        "color": {
+            "field": "Official language",
+            "type": "nominal",
+            "legend": {
+                "title": "Official Language"
+            },
+            "scale": {
+                "scheme": "tableau10"
+            }
+        },
+        "tooltip": [
+            {"field": "Official language", "type": "nominal", "title": "Official Language"},
+            {"field": "Country_Count", "type": "quantitative", "title": "Number of Countries"}
+        ]
+    }
+}
