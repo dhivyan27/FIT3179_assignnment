@@ -1,0 +1,67 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Relationship between Unemployment Rate and GDP in 2023 (Adjusted with Corrected Regression Line)",
+    "width": 600,
+    "height": 450,
+    "data": {
+        "url": "world-data-2023 2.csv"
+    },
+    "layer": [
+        {
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "GDP",
+                    "type": "quantitative",
+                    "title": "GDP (Log Scale)",
+                    "scale": {"type": "log"}
+                },
+                "y": {
+                    "field": "Unemployment rate",
+                    "type": "quantitative",
+                    "title": "Unemployment Rate"
+                },
+                "color": {
+                    "field": "Country",
+                    "type": "nominal",
+                    "legend": null
+                },
+                "tooltip": [
+                    {"field": "Country", "type": "nominal"},
+                    {"field": "GDP", "type": "quantitative"},
+                    {"field": "Unemployment rate", "type": "quantitative"}
+                ]
+            }
+        },
+        {
+            "transform": [
+                {
+                    "calculate": "log(datum.GDP)/log(10)",
+                    "as": "logGDP"
+                },
+                {
+                    "regression": "logGDP",
+                    "on": "Unemployment rate",
+                    "method": "linear",
+                    "as": ["logGDP", "Regression"]
+                },
+                {
+                    "calculate": "pow(10, datum.logGDP)",
+                    "as": "correctedGDP"
+                }
+            ],
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "correctedGDP",
+                    "type": "quantitative"
+                },
+                "y": {
+                    "field": "Regression",
+                    "type": "quantitative"
+                },
+                "color": {"value": "red"}
+            }
+        }
+    ]
+}

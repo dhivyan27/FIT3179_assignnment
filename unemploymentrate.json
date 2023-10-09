@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 800,
+    "height": 150,
+    "title": "Distribution of Unemployment Rates by Country in 2023",
+    "data": {
+        "url": "world-data-2023 2.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "color": "#fc9272",
+        "extent": "min-max"
+    },
+    "encoding": {
+        "x": {
+            "field": "Unemployment rate",
+            "type": "quantitative",
+            "title": "Unemployment Rate",
+            "scale": {"domain": [0, 0.30]}
+        },
+        "color": {
+            "value": "#fee0d2"
+        }
+    }
+}
