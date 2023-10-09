@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Distribution of Countries by Predominant Official Language in 2023",
+    "title": "Top 10 Predominant Official Languages by Number of Countries in 2023",
     "width": 600,
     "height": 450,
     "data": {
@@ -15,6 +15,18 @@
                 }
             ],
             "groupby": ["Official language"]
+        },
+        {
+            "window": [
+                {
+                    "op": "rank",
+                    "as": "Rank"
+                }
+            ],
+            "sort": [{"field": "Country_Count", "order": "descending"}]
+        },
+        {
+            "filter": "datum.Rank <= 10"
         }
     ],
     "mark": "arc",

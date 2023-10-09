@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Global Insights: A Comparative Analysis of Countries in 2023</title>
     <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
@@ -7,25 +8,50 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
     <link rel="stylesheet" type="text/css" href="styles.css" media="all">
 </head>
+
 <body>
     <div class="container">
         <h1>Global Insights: A Comparative Analysis of Countries in 2023</h1>
+        
+        <!-- Distribution of Unemployment Rates by Country in 2023 -->
         <div class="viz-wrapper">
-            <div id="homework9"></div>
-            <div id="homework10"></div>
+            <div id="unemploymentrate"></div>
+        </div>
+        
+        <!-- Relationship between Unemployment Rate and GDP in 2023 -->
+        <div class="viz-wrapper">
+            <div id="scatterunemployment"></div>
+        </div>
+
+        <!-- Top 10 Countries with the Highest Armed Forces in 2023 -->
+        <div class="viz-wrapper">
+            <div id="armedforces"></div>
+        </div>
+
+        <!-- Distribution of Countries by Predominant Language -->
+        <div class="viz-wrapper">
+            <div id="languagepie"></div>
         </div>
     </div>
 
     <script type="text/javascript">
-        var spec1 = "week9_homework.json";
-        vegaEmbed('#homework9', spec1).then(function(result) {
-            // Access the Vega view instance for the first visualization
+        // Embedding Vega-Lite visualizations
+        vegaEmbed('#unemploymentrate', 'unemploymentrate.json').then(function(result) {
+            // Access the Vega view instance for the unemployment rate
         }).catch(console.error);
 
-        var spec2 = "week10_homework.json";
-        vegaEmbed('#homework10', spec2).then(function(result) {
-            // Access the Vega view instance for the second visualization
+        vegaEmbed('#scatterunemployment', 'scatterunemployment.json').then(function(result) {
+            // Access the Vega view instance for the scatter plot
+        }).catch(console.error);
+
+        vegaEmbed('#armedforces', 'armedforces.json').then(function(result) {
+            // Access the Vega view instance for the armed forces histogram
+        }).catch(console.error);
+
+        vegaEmbed('#languagepie', 'languagepie.json').then(function(result) {
+            // Access the Vega view instance for the language pie chart
         }).catch(console.error);
     </script>
 </body>
+
 </html>
