@@ -1,38 +1,78 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 20px;
+    font-family: 'Source Sans Pro', sans-serif;
+    background-image: linear-gradient(to top right, #116588, #70c8b8);
+    color: #363636;
 }
 
-.container {
-    max-width: 1300px;
-    margin: 0 auto;
+.page {
+    width: 72%;
+    background-color: #f9f9f9;
+    margin: auto;
+    padding: 55px;
+    padding-top: 40px;
+}
+
+.viz_title {
+    text-align: center;
+    color: #393939;
+    font-size: 420%;
+    font-weight: bolder;
+    margin-bottom: 20px;
+}
+
+.viz_desc {
+    text-align: justify;
+    color: #393939;
+    font-size: 155%;
+    margin-bottom: 25px;
+}
+
+.pure-g {
+    margin-bottom: 3.5%;
+}
+
+.title {
+    margin-top: 25px;
+    margin-bottom: 15px;
     text-align: center;
 }
 
-h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
+.chart_title {
+    text-decoration: underline;
+    text-decoration-color: #88c8b2;
+    color: #393939;
+    font-size: 260%;
+    font-weight: bold;
+    margin-bottom: 30px;
 }
 
-.viz-wrapper {
-    display: flex;
-    flex-direction: column;  /* Stack visualizations vertically */
-    align-items: center;     /* Align items to the center */
-    margin: 0 auto;
-    background-color: white;
-    padding: 20px;
+.vis-container {
+    width: 100%;
+}
+
+#vg-tooltip-element {
+    font-size: 15px;
+    font-family: 'Source Sans Pro';
+}
+
+.author {
+    text-align: center;
+    font-size: 21px;
+    margin-top: 30px;
+}
+
+/* Description Styles */
+.desc-box {
+    margin-top: 10px;
+    margin-right: 50px;
+    padding: 15px 10px;
+    background: #88c8b2;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #232323;
+    font-family: 'Source Sans Pro';
+    font-size: 17px;
 }
 
-#choropleth_map, #homework10 {
-    width: 100%; /* Take full width of the parent container */
-    margin: 10px 0;  /* Add vertical spacing between visualizations */
-    height: auto;
-    border: 1px solid #e0e0e0;
-    border-radius: 5px;
-    padding: 20px;
+.bar_desc, .barcode_desc, .rank_desc, .scatter_desc, .heatmap_desc {
+    margin-top: 10px;
 }
