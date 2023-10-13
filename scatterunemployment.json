@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Relationship between Unemployment Rate and GDP in 2023 (Adjusted with Corrected Regression Line)",
+    "title": "Relationship between Unemployment Rate and GDP in 2023",
     "width": 600,
     "height": 450,
     "data": {

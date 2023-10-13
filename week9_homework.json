@@ -3,11 +3,43 @@
   "width": 800,
   "height": 450,
   "title": "CO2 Emissions Normalized by Population by Country in 2023",
-  "projection": {"type": "equalEarth"},
+  "projection": {
+    "type": "equalEarth",
+    "center": {"expr": "center_to"},
+    "scale": {"expr": "zoom_level"}
+  },
+  "params": [{
+    "name": "zoom_level",
+    "value": 130,
+    "bind": {
+    "input": "range",
+    "min": 100,
+    "max": 800,
+    "step": 10,
+    "name": "Zoom: "
+    }
+    },
+    {
+    "name": "center_to",
+    "value": [0, 0],
+    "bind": {
+    "input": "select",
+    "options": [
+    [0,0],
+    [135, -25],
+    [101, -4.4],
+    [15, 49],
+    [15, 0],
+    [-73, 19],
+    [80,30]
+    ],
+    "labels": ["Default", "Australia", "Malaysia", "Europe", "Africa", "Americas", "Asia"],
+    "name": "Map Centre: "
+    }}],
   "layer": [
     {
       "data": {
-        "url": "/Users/dhivyansureshkumar/Desktop/FIT3149 Assignment2/Oceans.topojson",
+        "url": "Oceans.topojson",
         "format": {"type": "topojson", "feature": "oceans"}
       },
       "mark": {"type": "geoshape", "fill": "skyblue"}

@@ -7,16 +7,18 @@
         "url": "world-data-2023 2.csv"
     },
     "transform": [
-        {
-            "window": [
-                {"op": "dense_rank", "as": "rank", "field": "Armed Forces size"}
-            ],
-            "sort": [{"field": "Armed Forces size", "order": "descending"}]
+        { "calculate":"toNumber(datum['Armed Forces size'])",
+                "as":"num_afs"
         },
         {
-            "filter": "datum.rank <= 10"
-        }
+            "window": [
+                {"op": "dense_rank", "as": "rank", "field": "num_afs"}
+            ],
+            "sort": [{"field": "num_afs", "order": "descending"}]
+        },
+        {"filter": "datum.rank <= 10"}
     ],
+    
     "mark": "bar",
     "encoding": {
         "y": {
@@ -29,7 +31,7 @@
             "field": "Armed Forces size",
             "type": "quantitative",
             "title": "Armed Forces Size",
-            "scale": {"type": "linear", "domain": [0, 1000000]}
+            "scale": {"type": "linear"}
         },
         "color": {
             "field": "Country",
