@@ -30,14 +30,20 @@
         }
     ],
     "layer": [
-        {
-            "mark": "point",
+        {    "selection": {
+            "continent_highlight": {
+            "type": "multi",
+            "fields": ["Continent"],
+            "bind": "legend"
+            }
+            },
+            "mark": "circle",
             "encoding": {
                 "x": {
                     "field": "GDP",
                     "type": "quantitative",
                     "title": "GDP (Log Scale)",
-                    "scale": {"type": "log"}
+                    "scale": {"type": "log", "format": ".1s"}
                 },
                 "y": {
                     "field": "Gross tertiary education enrollment (%)",
@@ -51,9 +57,37 @@
                 },
                 "size": {
                     "field": "Population",
+                    "scale": {"range": [40, 1400], "zero": false},
                     "type": "quantitative",
-                    "legend": {"title": "Population", "format": ".1s"}
+                    "legend": {"title": "Population"}
                 },
+                "color": {
+                    "field": "Continent",
+                    "type": "nominal",
+                    "scale": {
+                    "domain": [
+                        "Africa",
+                        "Europe",
+                        "Oceania",
+                        "Asia",
+                        "South America",
+                        "North America"
+                      ]
+                      ,
+                    "range": [
+                        "#377eb8",
+                        "#ff7f00",
+                        "#a65628",
+                        "#e41a1c",
+                        "#984ea3",
+                        "#33a02c"
+                      ]
+                    }
+                    },
+                "opacity": {
+                    "condition": {"selection": "continent_highlight", "value": 0.6},
+                    "value": 0.2
+                        },
                 "tooltip": [
                     {"field": "Country", "type": "nominal"},
                     {"field": "Gross tertiary education enrollment (%)", "type": "quantitative", "title": "Gross Tertiary Education Enrollment (%)"},
