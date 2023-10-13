@@ -7,53 +7,148 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="styles.css" media="all">
+    <style>
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            color: #333;
+            background-color: #f6f6f6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 50px 15px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .main-title {
+            font-size: 1.8em;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #222;
+        }
+
+        .viz-section {
+            display: flex;
+            align-items: start;
+            margin-bottom: 50px;
+        }
+
+        .viz-text {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .viz-title {
+            font-size: 1.5em;
+            font-weight: 700;
+            margin: 0 0 15px;
+            color: #444;
+        }
+
+        .viz-description {
+            margin-bottom: 25px;
+            line-height: 1.6;
+            color: #777;
+        }
+
+        .viz-wrapper {
+            flex: 1;
+            border: 1px solid #e5e5e5;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
         <h1 class="main-title">Global Insights: A Comparative Analysis of Countries in 2023</h1>
         
-        <!-- Homework 9 Visualization -->
-        <h2 class="viz-title">CO2 Emissions Normalised by Population by Country</h2>
-        <p class="viz-description">When examining global CO2 emissions, it's evident that most countries have relatively similar emission levels. However, the United States, China, and Russia stand out as the top contributors, with their emissions significantly surpassing other nations. On the opposite end of the spectrum, Central Africa consistently reports the lowest CO2 emissions. This stark contrast underscores the diverse environmental impacts and industrial activities of countries around the world.
-
-        </p>
-        <div class="viz-wrapper">
-            <div id="homework9"></div>
+        <!-- CO2 Emissions Visualization -->
+        <div class="viz-section">
+            <div class="viz-text">
+                <h2 class="viz-title">CO2 Emissions Normalised by Population by Country</h2>
+                <p class="viz-description">
+                    When examining global CO2 emissions...
+                </p>
+            </div>
+            <div class="viz-wrapper">
+                <div id="homework9"></div>
+            </div>
         </div>
 
-        <!-- Homework 10 Visualization -->
-        <h2 class="viz-title">Gross tertiary enrolement vs GDP</h2>
-        <p class="viz-description">Upon analyzing the data for gross tertiary enrollment against GDP, a clear trend emerges. There is a positive correlation between the two variables. Countries with higher GDP tend to have greater percentages of their population enrolling in tertiary education. This suggests that as nations become more economically prosperous, they also invest more in higher education, emphasizing the intrinsic link between economic well-being and educational advancement.</p>
-        <div class="viz-wrapper">
-            <div id="homework10"></div>
+        <!-- Gross Tertiary Enrolment Visualization -->
+        <div class="viz-section">
+            <div class="viz-text">
+                <h2 class="viz-title">Gross tertiary enrolment vs GDP</h2>
+                <p class="viz-description">
+                    Upon analyzing the data for gross tertiary...
+                </p>
+            </div>
+            <div class="viz-wrapper">
+                <div id="homework10"></div>
+            </div>
         </div>
 
-        <!-- Distribution of Unemployment Rates by Country in 2023 -->
-        <h2 class="viz-title">Distribution of Unemployment Rates by Country in 2023</h2>
-        <p class="viz-description">From the boxplot visualization, it's evident that the median unemployment rate across countries stands at <strong>0.0536</strong>. This central value provides a meaningful representation of the typical unemployment rate globally, with half of the countries having rates below this value and the other half above. In our subsequent analysis, we will delve deeper to explore and visualize how the unemployment rate interacts with and potentially affects a country's GDP, offering insights into the intricate relationship between employment and economic performance.</p>
-        <div class="viz-wrapper">
-            <div id="unemploymentrate"></div>
-        </div>
-        
-        <!-- Relationship between Unemployment Rate and GDP in 2023 -->
-        <h2 class="viz-title">Relationship between Unemployment Rate and GDP in 2023</h2>
-        <div class="viz-wrapper">
-            <div id="scatterunemployment"></div>
-        </div>
-
-        <!-- Top 10 Countries with the Highest Armed Forces in 2023 -->
-        <h2 class="viz-title">Top 10 Countries with the Highest Armed Forces in 2023</h2>
-        <div class="viz-wrapper">
-            <div id="armedforces"></div>
+        <!-- Unemployment Rates Visualization -->
+        <div class="viz-section">
+            <div class="viz-text">
+                <h2 class="viz-title">Distribution of Unemployment Rates by Country in 2023</h2>
+                <p class="viz-description">
+                    From the boxplot visualization...
+                </p>
+            </div>
+            <div class="viz-wrapper">
+                <div id="unemploymentrate"></div>
+            </div>
         </div>
 
-        <!-- Distribution of Countries by Predominant Language -->
-        <h2 class="viz-title">Distribution of Countries by Predominant Language</h2>
-        <div class="viz-wrapper">
-            <div id="languagepie"></div>
+        <!-- Scatterplot for Unemployment Visualization -->
+        <div class="viz-section">
+            <div class="viz-text">
+                <h2 class="viz-title">Scatterplot of Unemployment Rates</h2>
+                <p class="viz-description">
+                    This scatterplot representation showcases...
+                </p>
+            </div>
+            <div class="viz-wrapper">
+                <div id="scatterunemployment"></div>
+            </div>
         </div>
+
+        <!-- Armed Forces Rates Visualization -->
+        <div class="viz-section">
+            <div class="viz-text">
+                <h2 class="viz-title">Armed Forces Rate by Country</h2>
+                <p class="viz-description">
+                    A comparative analysis of the armed forces rate...
+                </p>
+            </div>
+            <div class="viz-wrapper">
+                <div id="armedforces"></div>
+            </div>
+        </div>
+
+        <!-- Language Distribution Visualization -->
+        <div class="viz-section">
+            <div class="viz-text">
+                <h2 class="viz-title">Distribution of Languages Globally</h2>
+                <p class="viz-description">
+                    Using a pie chart visualization, we can see...
+                </p>
+            </div>
+            <div class="viz-wrapper">
+                <div id="languagepie"></div>
+            </div>
+        </div>
+
+
     </div>
 
     <script type="text/javascript">
