@@ -1,67 +1,85 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Relationship between Unemployment Rate and GDP in 2023",
-    "width": 600,
-    "height": 450,
+    "title": "Relationship between Life Expectancy and Birth Rate in 2023",
     "data": {
-        "url": "world-data-2023 2.csv"
+      "url": "world-data-2023 2.csv"
     },
     "layer": [
-        {
-            "mark": "point",
-            "encoding": {
-                "x": {
-                    "field": "GDP",
-                    "type": "quantitative",
-                    "title": "GDP (Log Scale)",
-                    "scale": {"type": "log"}
-                },
-                "y": {
-                    "field": "Unemployment rate",
-                    "type": "quantitative",
-                    "title": "Unemployment Rate"
-                },
-                "color": {
-                    "field": "Country",
-                    "type": "nominal",
-                    "legend": null
-                },
-                "tooltip": [
-                    {"field": "Country", "type": "nominal"},
-                    {"field": "GDP", "type": "quantitative"},
-                    {"field": "Unemployment rate", "type": "quantitative"}
-                ]
-            }
+      {
+        "mark": {
+          "type": "point",
+          "filled": true
         },
-        {
-            "transform": [
-                {
-                    "calculate": "log(datum.GDP)/log(10)",
-                    "as": "logGDP"
-                },
-                {
-                    "regression": "logGDP",
-                    "on": "Unemployment rate",
-                    "method": "linear",
-                    "as": ["logGDP", "Regression"]
-                },
-                {
-                    "calculate": "pow(10, datum.logGDP)",
-                    "as": "correctedGDP"
-                }
-            ],
-            "mark": "line",
-            "encoding": {
-                "x": {
-                    "field": "correctedGDP",
-                    "type": "quantitative"
-                },
-                "y": {
-                    "field": "Regression",
-                    "type": "quantitative"
-                },
-                "color": {"value": "red"}
+        "encoding": {
+          "x": {
+            "field": "Life expectancy",
+            "type": "quantitative",
+            "scale": {
+              "domain": [50, 90]
             }
+          },
+          "y": {
+            "field": "Birth Rate",
+            "type": "quantitative"
+          },
+          "opacity": {
+            "condition": {
+              "test": "test(regexp(search_input,'i'),datum.Country)",
+              "value": 1
+            },
+            "value": 0.1
+          },
+          "tooltip": [
+            {
+              "field": "Country",
+              "type": "nominal"
+            },
+            {
+              "field": "Life expectancy",
+              "type": "quantitative"
+            },
+            {
+              "field": "Birth Rate",
+              "type": "quantitative"
+            }
+          ]
         }
+      },
+      {
+        "mark": {
+          "type": "line",
+          "color": "firebrick"
+        },
+        "transform": [
+          {
+            "loess": "Birth Rate",
+            "on": "Life expectancy"
+          }
+        ],
+        "encoding": {
+          "x": {
+            "field": "Life expectancy",
+            "type": "quantitative",
+            "scale": {
+              "domain": [50, 90]
+            }
+          },
+          "y": {
+            "field": "Birth Rate",
+            "type": "quantitative"
+          }
+        }
+      }
+    ],
+    "params": [
+      {
+        "name": "search_input",
+        "bind": {
+          "input": "search",
+          "placeholder": "Search for a country...",
+          "name": "Search: "
+        },
+        "value": ""
+      }
     ]
 }

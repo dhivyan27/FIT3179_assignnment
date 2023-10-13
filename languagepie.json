@@ -1,54 +1,56 @@
-{
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Top 10 Predominant Official Languages by Number of Countries in 2023",
-    "width": 600,
-    "height": 450,
-    "data": {
-        "url": "world-data-2023 2.csv"
-    },
-    "transform": [
-        {
-            "aggregate": [
-                {
-                    "op": "count",
-                    "as": "Country_Count"
-                }
-            ],
-            "groupby": ["Official language"]
-        },
-        {
-            "window": [
-                {
-                    "op": "rank",
-                    "as": "Rank"
-                }
-            ],
-            "sort": [{"field": "Country_Count", "order": "descending"}]
-        },
-        {
-            "filter": "datum.Rank <= 10"
-        }
-    ],
-    "mark": "arc",
-    "encoding": {
-        "theta": {
-            "field": "Country_Count",
-            "type": "quantitative",
-            "stack": true
-        },
-        "color": {
-            "field": "Official language",
-            "type": "nominal",
-            "legend": {
-                "title": "Official Language"
-            },
-            "scale": {
-                "scheme": "tableau10"
-            }
-        },
-        "tooltip": [
-            {"field": "Official language", "type": "nominal", "title": "Official Language"},
-            {"field": "Country_Count", "type": "quantitative", "title": "Number of Countries"}
-        ]
-    }
-}
+ {
+      "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+      "title": "Top 10 Predominant Official Languages by Number of Countries in 2023",
+      "width": 600,
+      "height": 450,
+      "data": {
+          "url": "world-data-2023 2.csv"
+      },
+      "transform": [
+         
+          {
+              "aggregate": [
+                  {
+                    
+                      "op": "count",
+                      "as": "Country_Count"
+                  }
+              ],
+              "groupby": ["Official language"]
+          },
+          {
+              "window": [
+                  {
+                      "op": "rank",
+                      "as": "Rank"
+                  }
+              ],
+              "sort": [{"field": "Country_Count", "order": "descending"}]
+          },
+          {
+              "filter": "datum.Rank <= 8"
+          }
+      ],
+      "mark": "arc",
+      "encoding": {
+          "theta": {
+              "field": "Country_Count",
+              "type": "quantitative",
+              "stack": true
+          },
+          "color": {
+              "field": "Official language",
+              "type": "nominal",
+              "legend": {
+                  "title": "Official Language"
+              },
+              "scale": {
+                  "scheme": "tableau10"
+              }
+          },
+          "tooltip": [
+              {"field": "Official language", "type": "nominal", "title": "Official Language"},
+              {"field": "Country_Count", "type": "quantitative", "title": "Number of Countries"}
+          ]
+      }
+  }
