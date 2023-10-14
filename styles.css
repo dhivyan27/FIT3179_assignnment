@@ -1,29 +1,43 @@
-/* Import the desired fonts */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap');
 
 /* Base Styling */
 body {
-    font-family: 'Lato', sans-serif;
-    background-color: #F7FAFC;  /* Soft Blue */
-    margin: 0;
+    font-family: 'sulphur', sans-serif;
+    background-color: #9CD08F; 
+    margin: 20px;
     padding: 20px;
-    color: #2C3E50;  /* Dark Blue */
+    color: #04724D; 
+    font-size: 18px;
+    scroll-behavior: smooth;
 }
 
 .container {
     max-width: 1300px;
     margin: 0 auto;
     text-align: center;
-    background-color: #ECF0F1;  /* Soft Gray */
-    border-radius: 15px;  /* Rounded corners */
+    background-color: #f8f8f8; 
+    border-radius: 15px;
     padding: 20px;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); 
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
     margin-bottom: 20px;
+    color: #04724D;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+h3 {
+    font-size: 22px;
 }
 
 .viz-wrapper {
@@ -31,19 +45,74 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
-    background-color: #EAEDED;  /* Lighter Gray */
+    background-color: #EAEDED; 
     padding: 20px;
-    border-radius: 15px;  /* Added rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Added shadow */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #choropleth_map, #homework10 {
     width: 100%;
     margin: 10px 0;
     height: auto;
-    border: 1px solid #D5DBDB;  /* Border Color */
-    border-radius: 15px;  /* Rounded corners */
+    border: 2px solid #474747;
+    border-radius: 15px;
     padding: 20px;
+    background-color: #9CD08F;
+    color: white;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
+p {
+    text-align: justify;
+    padding: 15px;
+}
+
+hr {
+    height: 2px;
+    background-color: #04724D;
+    border: none;
+}
+
+.box {
+    width: 90%;
+    height: auto;
+    border: 2px solid #474747;
+    border-radius: 15px;
+    background-color: #9CD08F;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin: auto;
+}
+
+.page {
+    width: 900px;
+    background-color: #f8f8f8;
+    border-radius: 30px;
+    border-color: #474747;
+    margin: auto;
+    padding: 50px;
+}
+
+.vis-container, .vis-container-right {
+    width: 100%;
+    line-height: 30px;
+}
+
+.vis-container {
+    text-align: left;
+}
+
+.vis-container-right {
+    text-align: right;
+}
+
+/* Additional styles... (Add other styles here if needed) */
 

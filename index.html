@@ -2,36 +2,33 @@
 <html>
 
 <head>
-    <title>Global Insights: A Comparative Analysis of Countries in 2023</title>
+    <title>Global Insights: Country Analysis 2023</title>
     <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="styles.css">
 </head>
 
-<link rel="stylesheet" href="styles.css">
-
-
 <body>
-    <div class="container">
-        <h1 class="main-title">Global Insights: A Comparative Analysis of Countries in 2023</h1>
+    <div class="content-container">
+        <header>
+            <h1 class="report-title">Global Insights: Country Analysis 2023</h1>
+            <p class="report-summary">
+                Dive into the comprehensive insights from different countries in 2023. Spanning various sectors from environmental metrics to societal statistics, this visual exploration offers a deep dive into global phenomena.
+            </p>
+        </header>
 
-        <!-- Summary Section -->
-        <p>
-            This report provides a comprehensive comparative analysis of various aspects of countries in the year 2023. From CO2 emissions normalized by population to the distribution of languages globally, the visualizations below offer valuable insights into global trends and patterns.
-        </p>
-
-        <!-- Table of Contents -->
-        <h2>Table of Contents</h2>
-        <ul>
-            <li><a href="#CO2Emissions">CO2 Emissions Normalised by Population by Country</a></li>
-            <li><a href="#TertiaryEnrolment">Gross tertiary enrolment vs GDP</a></li>
-            <li><a href="#UnemploymentRates">Distribution of Unemployment Rates by Country in 2023</a></li>
-            <li><a href="#ScatterUnemployment">Scatterplot of Unemployment Rates</a></li>
-            <li><a href="#ArmedForcesRate">Armed Forces Rate by Country</a></li>
-            <li><a href="#LanguageDistribution">Distribution of Languages Globally</a></li>
-        </ul>
+        <nav class="toc">
+            <h2>Contents Overview</h2>
+            <ul>
+                <li><a href="#CO2Emissions">CO2 Emissions Per Capita</a></li>
+                <li><a href="#TertiaryEnrolment">Tertiary Enrolment & GDP</a></li>
+                <li><a href="#UnemploymentRates">Unemployment Rates (2023)</a></li>
+                <li><a href="#ScatterUnemployment">Unemployment Scatterplot</a></li>
+                <li><a href="#ArmedForcesRate">Military Service Rates</a></li>
+                <li><a href="#LanguageDistribution">Global Language Spread</a></li>
+            </ul>
 
         <!-- CO2 Emissions Normalized by Population Visualization -->
         <div class="viz-section">
