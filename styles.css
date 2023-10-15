@@ -37,6 +37,10 @@ body {
     margin-bottom: 20px;
 }
 
+body {
+    zoom: 2.1; /* Adjust this value as needed */
+}
+
 h1 {
     font-family: 'Young Serif', serif; /* Updated to Young Serif */
     text-align: center;
