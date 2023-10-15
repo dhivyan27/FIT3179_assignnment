@@ -65,9 +65,10 @@
           <div id="homework9" class="vis-container"></div>
               <p>
                   <b>Interactive Features:</b><br>
-                  - Use the <b>zoom filter</b> located adjacent to the map to zoom into specific regions.<br>
+                  - <i>Use the <b>zoom filter</b> located adjacent to the map to zoom into specific regions.<br>
                   - Utilize the <b>continent selector</b> to navigate directly to a specific continent of interest.<br>
                   - Hover over individual countries to view <b>tooltip data</b> displaying CO<sub>2</sub> emissions in terms of tonnes per person.
+                </i>
               </p>
       </div>
   </div>
@@ -99,7 +100,7 @@
               </div>
               <div class="pure-u-1-2">
                   <p>
-                      Noticeable trends include higher GDP values corresponding to increased tertiary education enrollment in continents like <span style="color: #e67e22; font-weight: bold;">Europe</span> and <span style="color: #2ecc71; font-weight: bold;">North America</span>. In contrast, <span style="color: #3498db; font-weight: bold;">Africa</span> exhibits a more scattered distribution, indicating varying education rates despite similar GDP values. A <b>language selector</b> is also provided for international audiences to better comprehend the visualization.
+                      Noticeable trends include higher GDP values corresponding to increased tertiary education enrollment in continents like <span style="color: #e67e22; font-weight: bold;">Europe</span> and <span style="color: #2ecc71; font-weight: bold;">North America</span>. In contrast, <span style="color: #3498db; font-weight: bold;">Africa</span> exhibits a more scattered distribution, indicating varying education rates despite similar GDP values. <i>A <b>language selector</b> is also provided for international audiences to better comprehend the visualization.</i>
                   </p>
               </div>
           </div>
@@ -112,9 +113,9 @@
     <div id="histogram">
       <h2>Armed Forces Analysis</h2>
       <hr>
+      <h3>Top 10 Countries with Largest Armed Forces 2023</h3>
       <div class="pure-g">
           <div class="pure-u-1-2">
-              <h3>Top 10 Countries with Largest Armed Forces 2023</h3>
               <div id="armedforces" class="vis-container"></div>
           </div>
           <div class="pure-u-1-2">
@@ -130,6 +131,7 @@
       </div>
   </div>
   
+  
 
   <!-- section 4 birthrate vs life expectancy-->
 
@@ -139,12 +141,12 @@
     
     <!-- Introduction text spanning full width -->
     <div class="pure-g">
-        <div class="pure-u-1">
-            <p>
-                The visualizations below provide insightful comparisons between life expectancy and birth rate from a global perspective. Notably, a negative trend is observed in the scatterplot, indicating that countries with higher life expectancies tend to have lower birth rates. The boxplots give a statistical summary of the distribution for both life expectancy and birth rate by country in 2023.
-            </p>
-        </div>
-    </div>
+      <div class="pure-u-1">
+          <p>
+              The visualizations below provide insightful comparisons between life expectancy and birth rate from a global perspective. Notably, a negative trend is observed in the scatterplot, indicating that countries with higher life expectancies tend to have lower birth rates. The boxplots give a statistical summary of the distribution for both life expectancy and birth rate by country in 2023. <br><i> <b>Hover</b> over the <b>boxplot</b> to view information on median and quartiles, and use the <b>search bar</b> to highlight countries in the scatter plot.</i>
+          </p>
+      </div>
+  </div>
 
     <div class="pure-g">
         <!-- First graph: Boxplot of Life Expectancy and Birthrate -->
@@ -169,10 +171,10 @@
 <div id="piechart">
   <h2>Language Distribution Analysis</h2>
   <hr>
+  <h3>Top 10 Predominant Official Languages by Number of Countries in 2023</h3>
   <div class="pure-g">
       <!-- Pie chart for languages spoken in different countries -->
       <div class="pure-u-1-2">
-          <h3>Top 10 Predominant Official Languages by Number of Countries in 2023</h3>
           <div id="languagepie" class="vis-container">
               <!-- Image or code for the pie chart would go here -->
           </div>
@@ -180,13 +182,13 @@
       
       <!-- Description and analysis of the pie chart -->
       <div class="pure-u-1-2">
-          <div class="description-right">
-              <p>
-                  The pie chart on the left showcases the top 10 predominant official languages spoken across different countries in 2023. From the chart, we can observe that languages such as <b>Arabic</b>, <b>English</b>, and <b>Spanish</b> hold significant portions, indicating their widespread adoption as official languages in numerous countries. Conversely, languages like <b>Swahili</b> represent a smaller section, showing their official status in fewer nations.
-              </p>
-              <p>
-                  Analyzing such data provides insights into the cultural and political influence of these languages on a global scale. This also aids in understanding patterns of migration, colonization, and international relations throughout history.
-              </p>
+        <div class="description-right">
+            <p>
+                The pie chart on the left showcases the top 10 predominant official languages spoken across different countries in 2023. From the chart, we can observe that languages such as <b style="color: #3498db;">Arabic</b>, <b style="color: #e67e22;">English</b>, and <b style="color: #9b59b6;">Spanish</b> hold significant portions, indicating their widespread adoption as official languages in numerous countries. Conversely, languages like <b style="color: #FFC0CB;">Swahili</b> represent a smaller section, showing their official status in fewer nations.
+            </p>
+            <p>
+                Analyzing such data provides insights into the cultural and political influence of these languages on a global scale. This also aids in understanding patterns of migration, colonization, and international relations throughout history.
+            </p>
             </span>
           </div>
         </div>
@@ -198,22 +200,22 @@
 
     <script type="text/javascript">
         // Embedding Vega-Lite visualizations
-        vegaEmbed('#homework9', 'week9_homework.json').then(function(result) {
+        vegaEmbed('#homework9', 'week9_homework.json',{ actions: false }).then(function(result) {
         }).catch(console.error);
 
-        vegaEmbed('#homework10', 'week10_homework.json').then(function(result) {
+        vegaEmbed('#homework10', 'week10_homework.json',{ actions: false }).then(function(result) {
         }).catch(console.error);
 
-        vegaEmbed('#unemploymentrate', 'unemploymentrate.json').then(function(result) {
+        vegaEmbed('#unemploymentrate', 'unemploymentrate.json',{ actions: false }).then(function(result) {
         }).catch(console.error);
 
-        vegaEmbed('#scatterunemployment', 'scatterunemployment.json').then(function(result) {
+        vegaEmbed('#scatterunemployment', 'scatterunemployment.json',{ actions: false }).then(function(result) {
         }).catch(console.error);
 
-        vegaEmbed('#armedforces', 'armedforces.json').then(function(result) {
+        vegaEmbed('#armedforces', 'armedforces.json',{ actions: false }).then(function(result) {
         }).catch(console.error);
 
-        vegaEmbed('#languagepie', 'languagepie.json').then(function(result) {
+        vegaEmbed('#languagepie', 'languagepie.json',{ actions: false }).then(function(result) {
         }).catch(console.error);
     </script>
 </body>

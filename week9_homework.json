@@ -2,10 +2,12 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 100,
   "height": 550,
+  "disableContextMenu": true,
   "projection": {
     "type": "equalEarth",
     "center": {"expr": "center_to"},
     "scale": {"expr": "zoom_level"}
+    
   },
   "params": [{
     "name": "zoom_level",
