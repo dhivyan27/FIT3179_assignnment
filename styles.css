@@ -14,7 +14,7 @@ html {
 }
 
 .page {
-    width: 1000px;
+    width: 980px;
     background-color: #f8f8f8;
     border-radius: 30px;
     border-color: #474747;
@@ -23,10 +23,14 @@ html {
     padding-top: 40px;
 }
 
+.page b {
+    font-family: 'Gabarito', sans-serif; /* Use the Gabarito Variable Font for bold text */
+    font-weight: 700; /* Adjust the font weight for bold text (700 for semi-bold) */
+}
 
 body {
     font-family: 'Open Sans', sans-serif;
-    color: #333;
+    color: #202020;
     line-height: 1.6;
     background-color: #ADD8E6;
     margin-top: 20px;
@@ -41,8 +45,79 @@ h1 {
     color: #357ABD;
 }
 
+h2 {
+    font-size: 28px; /* Adjust the font size as needed */
+    color: #0356b4; /* Change the color to the desired shade of blue */
+}
+
+h3 {
+    font-size: 21px; /* Adjust the font size as needed */
+}
 
 
+.subtitle {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2em;
+    font-weight: 100; /* Add this line to make it bold */
+    color: #000000;
+    margin: 10px 0;
+    text-align: left;
+}
+
+
+.section-bubble {
+    background-color: #f5f5f5;  /* light gray */
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    margin: 20px 0;
+    font-family: 'Open Sans', sans-serif;
+    color: #202020;
+    line-height: 1.6;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-bubble p,
+.description-left p,
+.description-right p {
+    font-family: 'Open Sans', sans-serif;
+    color: #0e0e0e;
+    line-height: 1.6;
+}
+
+/* For bold text, use the Gabarito Variable Font with a specific weight */
+.section-bubble b {
+    font-family: 'Gabarito', sans-serif; /* Replace 'Gabarito' with the actual font family name */
+    font-weight: 700; /* Adjust the weight to the desired boldness (e.g., 700 for semi-bold) */
+}
+
+
+
+
+.description-container {
+    padding: 250px; /* Add padding to create space inside the bubble */
+    background-color: #fff; /* Set the background color for the bubble */
+    border-radius: 10px; /* Add rounded corners to the bubble */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Add a shadow to the bubble for depth */
+}
+
+.description-left {
+    margin-right: 10px; /* Adjust this value for more spacing */
+}
+
+.description-right {
+    line-height: 1.8; /* Adjust this value for more spacing */
+}
+
+.vis-container {
+    width: 100%; /* Adjust this value to make it wider or narrower as needed */
+}
 
 
 

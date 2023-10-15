@@ -25,36 +25,34 @@
 <!-- title -->
 <body id="top">
   <div class="page">
-    <h1 style="text-align: center;">Global Insights 2023: A Deep Dive into Country Comparisons</h1>
-    <p style="text-align: center;">Dhivyan Sureshkumar 32466951</p>
+    <h1 style="text-align:left;">Global Insights 2023:<br>A Deep Dive into Country Comparisons</h1>
+    <div class="subtitle">Dhivyan Sureshkumar 32466951</div>
+
     
-
-
     <!-- section 1 -->
-
+    <div class="section-bubble">
     <div class="pure-g">
       <div class="pure-u-1-2">
           <div class="description-left">
               <p>The <b>Global Country Information Dataset 2023</b> is a comprehensive resource that paints an intricate picture of nations across the globe. Every country's story is told through meticulous metrics, capturing their essence from various angles.</p>
               <p>Our visualisations encompass key insights ranging from <b>carbon emissions patterns</b>, correlations between <b>GDP and tertiary enrollment</b>, to deep dives into <b>armed forces size</b>, <b>birth rates</b>, and <b>life expectancy trends</b>. The aim is to uncover trends, relationships, and unique insights across countries.</p>
           </div>
-          
-      </div>
+        </div>
   
       <div class="pure-u-1-2">
           <div class="description-right">
               <p>Emphasizing its global reach, the dataset is a tapestry of information, weaving together data on demographic, economic, environmental, healthcare, and education indicators. It's a holistic portrayal of global narratives, crucial for informed decisions and research.</p>
               <p>This platform enables you to explore, compare, and contrast countries on multiple fronts, facilitating a deeper understanding of global intricacies. All data is designed to offer a clear perspective, assisting researchers, policymakers, and globally-minded individuals in their respective domains.</p>
           </div>
+        </div>
       </div>
-  </div>
-  
+    </div>
 
     <!-- section2 map-->
     
     <div>
       <div>
-          <div id="map" class="description description-left">
+          <div id="map">
               <h2>Global Carbon Emissions</h2>
               <hr>
               <p>
@@ -63,52 +61,51 @@
           </div>
       </div>
       <div>
-          <h3>CO2 Emissions Normalized by Population by Country in 2023</h3> <!-- I believe the title needs to be updated since it doesn't align with the CO2 content. -->
+          <h3>CO2 Emissions Normalized by Population by Country in 2023</h3> 
           <div id="homework9" class="vis-container"></div>
-          <div class="controls-info">
               <p>
                   <b>Interactive Features:</b><br>
                   - Use the <b>zoom filter</b> located adjacent to the map to zoom into specific regions.<br>
                   - Utilize the <b>continent selector</b> to navigate directly to a specific continent of interest.<br>
                   - Hover over individual countries to view <b>tooltip data</b> displaying CO<sub>2</sub> emissions in terms of tonnes per person.
               </p>
-          </div>
       </div>
   </div>
   
 
     <!-- section2 bubble chart-->
 
-<div id="bubble">
-    <h2>Education and Economy</h2>
-    <hr>
-    <h3>An Analysis of Tertiary Education Enrollment vs GDP 2023</h3>
-    <div class="pure-g">
-        <div class="pure-u-1">
-            <div class="description description-left">
-                <div id="homework10" class="vis-container"></div>
-            </div>
-        </div>
-        <div class="pure-g graph-description" style="font-size: 0.9em; margin-top: 20px;">
-            <div class="pure-u-1-2">
-                <p>
-                    The scatter plot visualizes the correlation between <span style="font-weight: bold;">Gross Tertiary Education Enrollment (%)</span> and <span style="font-weight: bold;">GDP (Log Scale)</span> across different continents for the year 2019. Each bubble represents a country, and its size signifies the population. Distinct colors represent different continents: 
-                    <span style="color: #3498db; font-weight: bold;">Africa</span>, 
-                    <span style="color: #e67e22; font-weight: bold;">Europe</span>, 
-                    <span style="color: #8e5e2a; font-weight: bold;">Oceania</span>,
-                    <span style="color: #e74c3c; font-weight: bold;">Asia</span>, 
-                    <span style="color: #9b59b6; font-weight: bold;">South America</span>, and 
-                    <span style="color: #2ecc71; font-weight: bold;">North America</span>.
-                </p>
-            </div>
-            <div class="pure-u-1-2">
-                <p>
-                    Noticeable trends include higher GDP values corresponding to increased tertiary education enrollment in continents like <b>Europe</b> and <b>North America</b>. In contrast, <b>Africa</b> exhibits a more scattered distribution, indicating varying education rates despite similar GDP values. A <b>language selector</b> is also provided for international audiences to better comprehend the visualization.
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
+    <div id="bubble">
+      <h2>Education and Economy</h2>
+      <hr>
+      <h3>An Analysis of Tertiary Education Enrollment vs GDP 2023</h3>
+      <div class="pure-g">
+          <div class="pure-u-1">
+              <div class="description description-left">
+                  <div id="homework10" class="vis-container"></div>
+              </div>
+          </div>
+          <div class="pure-g graph-description" style="font-size: 0.9em; margin-top: 20px;">
+              <div class="pure-u-1-2">
+                  <p>
+                      The scatter plot visualizes the correlation between <span style="font-weight: bold;">Gross Tertiary Education Enrollment (%)</span> and <span style="font-weight: bold;">GDP (Log Scale)</span> across different continents for the year 2019. Each bubble represents a country,<br> and its size signifies the population. Distinct colors represent different continents: 
+                      <span style="color: #3498db; font-weight: bold;">Africa</span>, 
+                      <span style="color: #e67e22; font-weight: bold;">Europe</span>, 
+                      <span style="color: #8e5e2a; font-weight: bold;">Oceania</span>,
+                      <span style="color: #e74c3c; font-weight: bold;">Asia</span>, 
+                      <span style="color: #9b59b6; font-weight: bold;">South America</span>, and <br>
+                      <span style="color: #2ecc71; font-weight: bold;">North America</span>.
+                  </p>
+              </div>
+              <div class="pure-u-1-2">
+                  <p>
+                      Noticeable trends include higher GDP values corresponding to increased tertiary education enrollment in continents like <span style="color: #e67e22; font-weight: bold;">Europe</span> and <span style="color: #2ecc71; font-weight: bold;">North America</span>. In contrast, <span style="color: #3498db; font-weight: bold;">Africa</span> exhibits a more scattered distribution, indicating varying education rates despite similar GDP values. A <b>language selector</b> is also provided for international audiences to better comprehend the visualization.
+                  </p>
+              </div>
+          </div>
+      </div>
+  </div>
+  
 
     <!-- section3 histogram-->
 
