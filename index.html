@@ -2,114 +2,202 @@
 <html>
 
 <head>
-    <title>Global Insights: Country Analysis 2023</title>
-    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <title>Global Insights 2023: A Deep Dive into Country Comparisons</title>
+
+  <!-- Import Vega & Vega-Lite -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="styles.css" media="all">
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+
 </head>
+<!-- title -->
+<body id="top">
+  <div class="page">
+    <h1 style="text-align: center;">Global Insights 2023: A Deep Dive into Country Comparisons</h1>
+    <p style="text-align: center;">Dhivyan Sureshkumar 32466951</p>
+    
 
-<body>
-    <div class="content-container">
-        <header>
-            <h1 class="report-title">Global Insights: Country Analysis 2023</h1>
-            <p class="report-summary">
-                Dive into the comprehensive insights from different countries in 2023. Spanning various sectors from environmental metrics to societal statistics, this visual exploration offers a deep dive into global phenomena.
-            </p>
-        </header>
 
-        <nav class="toc">
-            <h2>Contents Overview</h2>
-            <ul>
-                <li><a href="#CO2Emissions">CO2 Emissions Per Capita</a></li>
-                <li><a href="#TertiaryEnrolment">Tertiary Enrolment & GDP</a></li>
-                <li><a href="#UnemploymentRates">Unemployment Rates (2023)</a></li>
-                <li><a href="#ScatterUnemployment">Unemployment Scatterplot</a></li>
-                <li><a href="#ArmedForcesRate">Military Service Rates</a></li>
-                <li><a href="#LanguageDistribution">Global Language Spread</a></li>
-            </ul>
+    <!-- section 1 -->
 
-        <!-- CO2 Emissions Normalized by Population Visualization -->
-        <div class="viz-section">
-            <div class="viz-text">
-                <h2 class="viz-title" id="CO2Emissions">CO2 Emissions Normalised by Population by Country</h2>
-                <p class="viz-description">
-                    A detailed map showcasing the CO2 emissions normalized by population across different countries. The color scale represents the amount of emissions per capita, giving a clear perspective of the environmental impact in terms of population.
-                </p>
-            </div>
-            <div class="viz-wrapper">
-                <div id="homework9"></div>
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+          <div class="description-left">
+              <p>The <b>Global Country Information Dataset 2023</b> is a comprehensive resource that paints an intricate picture of nations across the globe. Every country's story is told through meticulous metrics, capturing their essence from various angles.</p>
+              <p>Our visualisations encompass key insights ranging from <b>carbon emissions patterns</b>, correlations between <b>GDP and tertiary enrollment</b>, to deep dives into <b>armed forces size</b>, <b>birth rates</b>, and <b>life expectancy trends</b>. The aim is to uncover trends, relationships, and unique insights across countries.</p>
+          </div>
+          
+      </div>
+  
+      <div class="pure-u-1-2">
+          <div class="description-right">
+              <p>Emphasizing its global reach, the dataset is a tapestry of information, weaving together data on demographic, economic, environmental, healthcare, and education indicators. It's a holistic portrayal of global narratives, crucial for informed decisions and research.</p>
+              <p>This platform enables you to explore, compare, and contrast countries on multiple fronts, facilitating a deeper understanding of global intricacies. All data is designed to offer a clear perspective, assisting researchers, policymakers, and globally-minded individuals in their respective domains.</p>
+          </div>
+      </div>
+  </div>
+  
+
+    <!-- section2 map-->
+    
+    <div>
+      <div>
+          <div id="map" class="description description-left">
+              <h2>Global Carbon Emissions</h2>
+              <hr>
+              <p>
+                  The map below provides a comprehensive visualization of CO<sub>2</sub> emissions, normalized by population, across different countries. Notably, regions like America, Australia, and parts of Asia exhibit significantly high CO<sub>2</sub> emissions, whereas central Africa portrays considerably low emissions.
+              </p>
+          </div>
+      </div>
+      <div>
+          <h3>CO2 Emissions Normalized by Population by Country in 2023</h3> <!-- I believe the title needs to be updated since it doesn't align with the CO2 content. -->
+          <div id="homework9" class="vis-container"></div>
+          <div class="controls-info">
+              <p>
+                  <b>Interactive Features:</b><br>
+                  - Use the <b>zoom filter</b> located adjacent to the map to zoom into specific regions.<br>
+                  - Utilize the <b>continent selector</b> to navigate directly to a specific continent of interest.<br>
+                  - Hover over individual countries to view <b>tooltip data</b> displaying CO<sub>2</sub> emissions in terms of tonnes per person.
+              </p>
+          </div>
+      </div>
+  </div>
+  
+
+    <!-- section2 bubble chart-->
+
+<div id="bubble">
+    <h2>Education and Economy</h2>
+    <hr>
+    <h3>An Analysis of Tertiary Education Enrollment vs GDP 2023</h3>
+    <div class="pure-g">
+        <div class="pure-u-1">
+            <div class="description description-left">
+                <div id="homework10" class="vis-container"></div>
             </div>
         </div>
-
-        <!-- Gross Tertiary Enrolment Visualization -->
-        <div class="viz-section">
-            <div class="viz-text">
-                <h2 class="viz-title">Gross tertiary enrolment vs GDP</h2>
-                <p class="viz-description">
-                    Upon analyzing the data for gross tertiary...
+        <div class="pure-g graph-description" style="font-size: 0.9em; margin-top: 20px;">
+            <div class="pure-u-1-2">
+                <p>
+                    The scatter plot visualizes the correlation between <span style="font-weight: bold;">Gross Tertiary Education Enrollment (%)</span> and <span style="font-weight: bold;">GDP (Log Scale)</span> across different continents for the year 2019. Each bubble represents a country, and its size signifies the population. Distinct colors represent different continents: 
+                    <span style="color: #3498db; font-weight: bold;">Africa</span>, 
+                    <span style="color: #e67e22; font-weight: bold;">Europe</span>, 
+                    <span style="color: #8e5e2a; font-weight: bold;">Oceania</span>,
+                    <span style="color: #e74c3c; font-weight: bold;">Asia</span>, 
+                    <span style="color: #9b59b6; font-weight: bold;">South America</span>, and 
+                    <span style="color: #2ecc71; font-weight: bold;">North America</span>.
                 </p>
             </div>
-            <div class="viz-wrapper">
-                <div id="homework10"></div>
-            </div>
-        </div>
-
-        <!-- Unemployment Rates Visualization -->
-        <div class="viz-section">
-            <div class="viz-text">
-                <h2 class="viz-title">Distribution of Unemployment Rates by Country in 2023</h2>
-                <p class="viz-description">
-                    From the boxplot visualization...
+            <div class="pure-u-1-2">
+                <p>
+                    Noticeable trends include higher GDP values corresponding to increased tertiary education enrollment in continents like <b>Europe</b> and <b>North America</b>. In contrast, <b>Africa</b> exhibits a more scattered distribution, indicating varying education rates despite similar GDP values. A <b>language selector</b> is also provided for international audiences to better comprehend the visualization.
                 </p>
             </div>
-            <div class="viz-wrapper">
-                <div id="unemploymentrate"></div>
-            </div>
         </div>
-
-        <!-- Scatterplot for Unemployment Visualization -->
-        <div class="viz-section">
-            <div class="viz-text">
-                <h2 class="viz-title">Scatterplot of Unemployment Rates</h2>
-                <p class="viz-description">
-                    This scatterplot representation showcases...
-                </p>
-            </div>
-            <div class="viz-wrapper">
-                <div id="scatterunemployment"></div>
-            </div>
-        </div>
-
-        <!-- Armed Forces Rates Visualization -->
-        <div class="viz-section">
-            <div class="viz-text">
-                <h2 class="viz-title">Armed Forces Rate by Country</h2>
-                <p class="viz-description">
-                    A comparative analysis of the armed forces rate...
-                </p>
-            </div>
-            <div class="viz-wrapper">
-                <div id="armedforces"></div>
-            </div>
-        </div>
-
-        <!-- Language Distribution Visualization -->
-        <div class="viz-section">
-            <div class="viz-text">
-                <h2 class="viz-title">Distribution of Languages Globally</h2>
-                <p class="viz-description">
-                    Using a pie chart visualization, we can see...
-                </p>
-            </div>
-            <div class="viz-wrapper">
-                <div id="languagepie"></div>
-            </div>
-        </div>
-
-
     </div>
+</div>
+
+    <!-- section3 histogram-->
+
+    <div id="histogram">
+      <h2>Armed Forces Analysis</h2>
+      <hr>
+      <div class="pure-g">
+          <div class="pure-u-1-2">
+              <h3>Top 10 Countries with Largest Armed Forces 2023</h3>
+              <div id="armedforces" class="vis-container"></div>
+          </div>
+          <div class="pure-u-1-2">
+              <div class="description-right">
+                  <p>From <b>the histogram</b>, it's evident which countries have prioritized military strength. The countries displayed here are those with the largest armed forces in 2023. The dominance of certain nations in this chart could be attributed to various historical, political, and strategic reasons. It's fascinating to see how the size of armed forces may or may not correlate with a nation's global influence or its GDP.</p>
+                  <span style="font-size:12px;">
+                      <p>
+                      <i><b>Hover</b> over the bars in <b>the histogram</b> to see exact values and details about the armed forces of a specific country.</i> <br>
+                      </p>
+                  </span>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+
+  <!-- section 4 birthrate vs life expectancy-->
+
+  <div id="scatter,boxplot">
+    <h2>Life Expectancy & Birthrate</h2>
+    <hr>
+    
+    <!-- Introduction text spanning full width -->
+    <div class="pure-g">
+        <div class="pure-u-1">
+            <p>
+                The visualizations below provide insightful comparisons between life expectancy and birth rate from a global perspective. Notably, a negative trend is observed in the scatterplot, indicating that countries with higher life expectancies tend to have lower birth rates. The boxplots give a statistical summary of the distribution for both life expectancy and birth rate by country in 2023.
+            </p>
+        </div>
+    </div>
+
+    <div class="pure-g">
+        <!-- First graph: Boxplot of Life Expectancy and Birthrate -->
+        <div class="pure-u-1-2">
+            <div id="boxplot">
+                <div id="unemploymentrate" class="vis-container"></div>
+            </div>
+        </div>
+
+        <!-- Second graph: Scatter plot of Life Expectancy vs. Birth Rate -->
+        <div class="pure-u-1-2">
+            <div id="scatterplot">
+                <div id="scatterunemployment" class="vis-container"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- section 5 pie chart -->
+
+<div id="piechart">
+  <h2>Language Distribution Analysis</h2>
+  <hr>
+  <div class="pure-g">
+      <!-- Pie chart for languages spoken in different countries -->
+      <div class="pure-u-1-2">
+          <h3>Top 10 Predominant Official Languages by Number of Countries in 2023</h3>
+          <div id="languagepie" class="vis-container">
+              <!-- Image or code for the pie chart would go here -->
+          </div>
+      </div>
+      
+      <!-- Description and analysis of the pie chart -->
+      <div class="pure-u-1-2">
+          <div class="description-right">
+              <p>
+                  The pie chart on the left showcases the top 10 predominant official languages spoken across different countries in 2023. From the chart, we can observe that languages such as <b>Arabic</b>, <b>English</b>, and <b>Spanish</b> hold significant portions, indicating their widespread adoption as official languages in numerous countries. Conversely, languages like <b>Swahili</b> represent a smaller section, showing their official status in fewer nations.
+              </p>
+              <p>
+                  Analyzing such data provides insights into the cultural and political influence of these languages on a global scale. This also aids in understanding patterns of migration, colonization, and international relations throughout history.
+              </p>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> <!-- end page -->
+
+
 
     <script type="text/javascript">
         // Embedding Vega-Lite visualizations

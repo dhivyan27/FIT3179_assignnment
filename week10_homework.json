@@ -1,6 +1,5 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Gross Tertiary Education Enrollment vs. GDP in 2023",
     "width": 600,
     "height": 450,
     "data": {
@@ -12,7 +11,7 @@
             "value": "All",
             "bind": {
                 "input": "select",
-                "options": ["All", "English", "Spanish", "Chinese", "Hindi", "Arabic", "Other"],
+                "options": ["All", "English", "Spanish", "Chinese", "Hindi", "Arabic"],
                 "name": "Select Language"
             }
         }
@@ -120,5 +119,7 @@
                 "text": {"field": "Country", "type": "nominal"}
             }
         }
-    ]
+    ],
+    "width": 700,
+    "height": 400
 }

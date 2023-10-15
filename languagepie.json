@@ -1,8 +1,8 @@
  {
       "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
       "title": "Top 10 Predominant Official Languages by Number of Countries in 2023",
-      "width": 600,
-      "height": 450,
+      "width": 200,
+      "height": 280,
       "data": {
           "url": "world-data-2023 2.csv"
       },
