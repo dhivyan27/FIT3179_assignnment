@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 300,
+    "width": 200,
     "height": 250,
     "data": {
         "url": "world-data-2023 2.csv"
@@ -17,7 +17,6 @@
         },
         {"filter": "datum.rank <= 10"}
     ],
-    
     "mark": "bar",
     "encoding": {
         "y": {
@@ -33,16 +32,17 @@
             "scale": {"type": "linear"}
         },
         "color": {
-            "field": "Country",
+            "field": "Continent",
             "type": "nominal",
-            "legend": null,
+            "legend": {"title": "Continent"},
             "scale": {
                 "scheme": "tableau10"
             }
         },
         "tooltip": [
             {"field": "Country", "type": "nominal"},
-            {"field": "Armed Forces size", "type": "quantitative"}
+            {"field": "Armed Forces size", "type": "quantitative"},
+            {"field": "Continent", "type": "nominal"}
         ]
     }
 }
