@@ -6,7 +6,7 @@ This repository contains a visualization of various country-related metrics usin
 
 ## Visualization
 
-You can view the visualization directly on the website: [Country Info Visualization]([https://your-website-link.com/country-info](https://dhivyan27.github.io/Global-Country-Information-Visualisation/))
+You can view the visualization directly on the website: [Country Info Visualization]([https://dhivyan27.github.io/Global-Country-Information-Visualisation/])
 
 ## How It Works
 
