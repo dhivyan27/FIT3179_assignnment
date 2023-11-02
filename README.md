@@ -19,9 +19,4 @@ Data for the visualization is sourced from Kaggle and has been pre-processed to 
 
 Feel free to fork this repository and make improvements or suggest any changes via pull requests.
 
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for more details.
-
-
 
